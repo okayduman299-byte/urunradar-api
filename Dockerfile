@@ -4,7 +4,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-RUN cp app-2.py app.py
+RUN RUN cp app-auto.py app.py
 ENV PORT=8000
 EXPOSE 8000
 
