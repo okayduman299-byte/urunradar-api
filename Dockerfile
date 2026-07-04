@@ -3,8 +3,10 @@ FROM python:3.12-slim
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir playwright
+RUN playwright install --with-deps chromium
 COPY . .
-RUN cp app-auto-v4.py app.py
+RUN cp app-auto-v5.py app.py
 ENV PORT=8000
 EXPOSE 8000
 
